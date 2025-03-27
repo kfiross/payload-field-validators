@@ -1,13 +1,13 @@
-import { Glob, $ } from "bun"
+import { Glob, $ } from 'bun'
 
 await $`rm -rf dist`
-const files = new Glob("./src/**/*.{ts,tsx}").scan()
+const files = new Glob('./src/**/*.{ts,tsx}').scan()
 for await (const file of files) {
   await Bun.build({
-    format: "esm",
-    outdir: "dist/esm",
-    external: ["*"],
-    root: "src",
+    format: 'esm',
+    outdir: 'dist/esm',
+    external: ['*'],
+    root: 'src',
     entrypoints: [file],
   })
 }

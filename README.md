@@ -3,14 +3,16 @@
 Easy validation handlers for Payload CMS collection's fields
 
 # Usage
+
 ## Quick start
 
 Assuming we have a Collection
+
 ```ts
 export default MyCollection: CollectionConfig = {
   // other fields..
     {
-      name: "number_field", 
+      name: "number_field",
       type: "number",
     },
     {
@@ -26,19 +28,22 @@ We can add a validator to `TextField`:
 ```ts
 {
   // other configs..
-  validate: (value: any) => validateField({
-      condition: value.length < 100
-  })
+  validate: (value: any) =>
+    validateField({
+      condition: value.length < 100,
+    })
 }
 ```
 
 Similarly, we can add a validator to `NumberField`:
+
 ```ts
 {
   // other configs..
-  validate: (value: any) => validateField({
-    condition: value > 100
-  })
+  validate: (value: any) =>
+    validateField({
+      condition: value > 100,
+    })
 }
 ```
 
@@ -46,7 +51,8 @@ The default message will be `"Invalid input"`
 
 ## Advanced
 
-* The default error message could be overridden using the `message` param:
+- The default error message could be overridden using the `message` param:
+
 ```ts
 {
     // other field's configs..
@@ -58,7 +64,8 @@ The default message will be `"Invalid input"`
 }
 ```
 
-* We can leverage multiple validator to `NumberField` and for each case to show appropriate message:
+- We can leverage multiple validator to `NumberField` and for each case to show appropriate message:
+
 ```ts
 {
   name: "grade",
@@ -78,10 +85,13 @@ The default message will be `"Invalid input"`
 ```
 
 ### Using Validations libraries
+
 You can use form validation libraries like `valibot`/`zod`/`vest` to write more concise conditions
 
 #### Valibot Example
+
 using `valibotCheck` utility
+
 ```ts
 // import valibot
 import * as v from "valibot";
@@ -100,8 +110,7 @@ import * as v from "valibot";
 
 ## Specific use-cases
 
-
-* Adding Regex validator to `TextField`
+- Adding Regex validator to `TextField`
 
 ```ts
 const onlyLettersRegex = /^[a-zA-Z0-9]+$/;
@@ -116,13 +125,13 @@ export default MyCollection: CollectionConfig = {
     validate: (value: any) => validateRegex(
       onlyLettersRegex,
       value,
-      "Name must nor contain special characters"   // (optional error message) 
-    ),    
+      "Name must nor contain special characters"   // (optional error message)
+    ),
     required: true
 }
 ```
 
-* Adding URL validator to `TextField`
+- Adding URL validator to `TextField`
 
 ```ts
 export default MyCollection: CollectionConfig = {
@@ -138,12 +147,12 @@ export default MyCollection: CollectionConfig = {
 }
 ```
 
-* Adding IP Address validator to `TextField`
+- Adding IP Address validator to `TextField`
 
 ```ts
 export default MyCollection: CollectionConfig = {
     {
-      name: "website_url", 
+      name: "website_url",
       type: "text",
       admin: {
       readOnly: false,

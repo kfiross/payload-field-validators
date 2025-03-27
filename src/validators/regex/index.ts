@@ -1,6 +1,6 @@
-import {validateField} from "../index.js";
-import * as v from "valibot";
-import {valibotCheck} from "../../utils/index.js";
+import { validateField } from '../index.js'
+import * as v from 'valibot'
+import { valibotCheck } from '../../utils/index.js'
 
 /**
  * Wrapper function for Regex validation
@@ -11,6 +11,6 @@ import {valibotCheck} from "../../utils/index.js";
 export function validateRegex(regExp: RegExp, value: any, message?: string): any {
   return validateField({
     condition: valibotCheck(v.pipe(v.string(), v.regex(regExp)), value),
-    message: message || "Invalid input",
-  });
+    message: message || 'Invalid input',
+  })
 }

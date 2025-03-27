@@ -1,6 +1,6 @@
-import {validateUrl} from './url/index.js'
-import {validateRegex} from './regex/index.js'
-import {validateIPAddress} from './ip_address/index.js'
+import { validateUrl } from './url/index.js'
+import { validateRegex } from './regex/index.js'
+import { validateIPAddress } from './ip_address/index.js'
 
 /**
  * Interface to define a Validator
@@ -16,16 +16,10 @@ interface PayloadValidator {
  */
 export function validateField(validators: PayloadValidator[] | PayloadValidator): any {
   const _list = Array.isArray(validators) ? validators : [validators]
-  for (let {condition, message} of _list) {
-    if (!condition)
-      return message || "Invalid input";
+  for (let { condition, message } of _list) {
+    if (!condition) return message || 'Invalid input'
   }
-  return null;
+  return null
 }
 
-
-export {
-  validateRegex,
-  validateUrl,
-  validateIPAddress,
-}
+export { validateRegex, validateUrl, validateIPAddress }

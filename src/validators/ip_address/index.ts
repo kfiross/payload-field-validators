@@ -1,6 +1,5 @@
-import {validateField} from "../index.js";
-import {isIP} from 'node:net';
-
+import { validateField } from '../index.js'
+import { isIP } from 'node:net'
 
 /**
  * Wrapper function for checking IP address validation
@@ -10,7 +9,6 @@ import {isIP} from 'node:net';
 export function validateIPAddress(value: any, message?: string): any {
   return validateField({
     condition: isIP(value) > 0,
-    message: message || "Invalid IP address",
-  });
+    message: message || 'Invalid IP address',
+  })
 }
-

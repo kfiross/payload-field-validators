@@ -19,6 +19,5 @@ export const payloadFieldValidatorsPlugin =
       return config
     }
 
-
     return config
   }
