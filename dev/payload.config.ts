@@ -2,7 +2,7 @@ import { mongooseAdapter } from '@payloadcms/db-mongodb'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import path from 'path'
 import { buildConfig } from 'payload'
-import { payloadFieldValidators } from 'payload-field-validators'
+import { payloadFieldValidators } from '../src/plugin/index.js'
 import sharp from 'sharp'
 import { fileURLToPath } from 'url'
 
