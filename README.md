@@ -24,7 +24,7 @@ export default MyCollection: CollectionConfig = {
 We can add a validator to `TextField`:
 
 ```ts
-  {
+{
   // other configs..
   validate: (value: any) => validateField({
       condition: value.length < 100
@@ -34,12 +34,12 @@ We can add a validator to `TextField`:
 
 Similarly, we can add a validator to `NumberField`:
 ```ts
-  {
-      // other configs..
-      validate: (value: any) => validateField({
-        condition: value > 100
-    })
-  }
+{
+  // other configs..
+  validate: (value: any) => validateField({
+    condition: value > 100
+  })
+}
 ```
 
 The default message will be `"Invalid input"`
@@ -48,14 +48,14 @@ The default message will be `"Invalid input"`
 
 * The default error message could be overridden using the `message` param:
 ```ts
-  {
-      // other field's configs..
-      name: "percentage_usage",
-      validate: (value: any) => validateField({
-        condition: value > 20 and value < 50,
-        message: "percentage must be between 20 to 50 %"
-    })
-  }
+{
+    // other field's configs..
+    name: "percentage_usage",
+    validate: (value: any) => validateField({
+      condition: value > 20 and value < 50,
+      message: "percentage must be between 20 to 50 %"
+  })
+}
 ```
 
 * We can leverage multiple validator to `NumberField` and for each case to show appropriate message:
