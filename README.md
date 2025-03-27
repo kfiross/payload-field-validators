@@ -107,13 +107,17 @@ import * as v from "valibot";
 const onlyLettersRegex = /^[a-zA-Z0-9]+$/;
 export default MyCollection: CollectionConfig = {
     {
-      name: "url",
-        type: "text",
+      name: "name",
+      type: "text",
       admin: {
       readOnly: false,
         hidden: false
     },
-    validate: (value: any) => validateRegex(onlyLettersRegex, value),    // --> add this line
+    validate: (value: any) => validateRegex(
+      onlyLettersRegex,
+      value,
+      "Name must nor contain special characters"   // (optional error message) 
+    ),    
     required: true
 }
 ```
